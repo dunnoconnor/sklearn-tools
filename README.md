@@ -67,6 +67,6 @@ Split the labeled data into a training set (80% of data) and test set (20% of da
 Print the test and training accuracy for each k value of neighbors and plot them using [matplotlib](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html).
 
 ## Conclusion
-The optimal number of k-neighbors for this data set is 3, with a test accuracy of 86%. Applying the model with a k of 3 to the unlabeled data set produces a list of 190 (of 1000) apprentices who are at risk of withdrawal.
+The optimal number of k-neighbors for this data set is 2, with a test accuracy of 88.5%. Applying the model with a k of 2 to the unlabeled data set produces a list of 76 (of 1000) apprentices who are at risk of withdrawal.
 
 This model could be trained on an organic dataset to make ongoing automated predictions of apprentice withdrawal risk, allowing apprenticeship providers to make targeted intervention to improve their completion rates.

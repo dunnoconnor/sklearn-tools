@@ -10,8 +10,8 @@ This is a proof of concept for using [scikit-learn](https://scikit-learn.org/sta
 Two data sets are included in this repository. The first is [labeled data](/labeled_data2.csv) which contains 1000 profiles of apprentices who have completed the program. The features of this data set are:
 * Days since the apprentice last attended a workshop (integer)
 * Days since the apprentice last attended a coaching session (integer)
-* Whether the last manager evaluation the apprentice received was positive (boolean)
-* Whether the last self-evaluation the apprentice completed was positive (boolean)
+* Whether the manager evalutation rated the apprentice 'needs improvement' (boolean)
+* Whether the apprentice rated 'needs improvement' in their self-evaluation (boolean)
 * Total number of assignments the apprentice is missing (integer)
 * Whether the apprentice withdrew before completing the program (boolean)
 
@@ -45,7 +45,7 @@ Set the X and y values of the model. Withdrawal status is the y (target) value a
 
 Create a k-neighbors classifier with an arbitrary number of neighbors to revise later based on accuracy testing. Fit the classifier to the data using the fit() method. Predict the labels for the unlabeled data using the predict() method. For improved readability, separately print each apprentice who is predicted to withdraw along with a count of at-risk apprentices.
 
-The result of running this model was a list of 84 out of 1000 apprentices predicted to withdraw before completing the program.
+The result of running this model was a list of 62 out of 1000 apprentices predicted to withdraw before completing the program.
 
 ## Accuracy Testing
 After generating a set of predictions, my next step was to test the model using a range of k-neighbor values. A larger k value suppresses the effects of noise, but makes the classification boundaries less distinct. By testing the accuracy of the model at multiple k values, I am able to determine the optimal k value to avoid underfitting and overfitting.
@@ -67,6 +67,6 @@ Split the labeled data into a training set (80% of data) and test set (20% of da
 Print the test and training accuracy for each k value of neighbors and plot them using [matplotlib](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html).
 
 ## Conclusion
-The optimal number of k-neighbors for this data set is 2, with a test accuracy of 88.5%. Applying the model with a k of 2 to the unlabeled data set produces a list of 76 (of 1000) apprentices who are at risk of withdrawal.
+The optimal number of k-neighbors for this data set is 2, with a test accuracy of 83%. Applying the model with a k of 2 to the unlabeled data set produces a list of 83 (of 1000) apprentices who are at risk of withdrawal.
 
 This model could be trained on an organic dataset to make ongoing automated predictions of apprentice withdrawal risk, allowing apprenticeship providers to make targeted intervention to improve their completion rates.

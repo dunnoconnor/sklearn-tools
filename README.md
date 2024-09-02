@@ -7,7 +7,7 @@ All data used in this proof of concept is generated using [mockaroo](https://www
 This is a proof of concept for using [scikit-learn](https://scikit-learn.org/stable/index.html) to create a predictive model capable of analyzing if an apprentice is likely to withdraw from an apprenticeship program. The end user of this tool would be an apprenticeship provider looking to make more targeted interventions to improve apprentice retention and program completion.
 
 ## Data Sets
-Two data sets are included in this repository. The first is [labeled data](/labeled_data2.csv) which contains 1000 profiles of apprentices who have completed the program. The features of this data set are:
+Two data sets are included in this repository. The first is [labeled data](/labeled_data3.csv) which contains 1000 profiles of apprentices who have completed the program. The features of this data set are:
 * Days since the apprentice last attended a workshop (integer)
 * Days since the apprentice last attended a coaching session (integer)
 * Whether the manager evalutation rated the apprentice 'needs improvement' (boolean)
@@ -15,7 +15,7 @@ Two data sets are included in this repository. The first is [labeled data](/labe
 * Total number of assignments the apprentice is missing (integer)
 * Whether the apprentice withdrew before completing the program (boolean)
 
-The second data set is [unlabeled data](/unlabeled_data2.csv) which contains 1000 profiles of apprentices currently on program. This data has all the features of the labeled data **except** for withdrawal status.
+The second data set is [unlabeled data](/unlabeled_data3.csv) which contains 1000 profiles of apprentices currently on program. This data has all the features of the labeled data **except** for withdrawal status.
 
 ## Machine Learning
 This predictive model is based on scikit-learn: a library of open-source tools for predictive data analysis. This specific project is a supervised learning model using k-neighbors classification.

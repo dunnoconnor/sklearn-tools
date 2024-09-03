@@ -1,6 +1,6 @@
 # Import KNeighborsClassifier and labeled / unlabeled dataframes
 from sklearn.neighbors import KNeighborsClassifier 
-from apprentices import labeled_df, unlabeled_df
+from apprentice_data import labeled_df, unlabeled_df, print_at_risk
 
 # set withdrawal as target value
 y = labeled_df["withdrawal"].values
@@ -22,13 +22,5 @@ y_pred = knn.predict(X_new)
 # Print the predictions
 print("Predictions: {}".format(y_pred)) 
 
-# Print each apprentice who is predicted to withdraw
-apps = unlabeled_df.to_numpy()
-count = 0
-for i in range(len(y_pred)):
-    if y_pred[i] == True:
-        count += 1
-        print(apps[i])
-
-# Print the count of apprentices predicted to withdraw
-print(count)
+# Print apprentices predicted to withdraw
+print_at_risk(y_pred)

@@ -37,7 +37,7 @@ All the other non-identifying features of the data are used to find relationship
 ## Approach
 I completed the following steps to train and implement the model:
 
-Convert the CSV data to [pandas DataFrames](https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe) in the file [apprentnices.py](/apprentices.py).
+Convert the CSV data to [pandas DataFrames](https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe) in the file [apprentice_data.py](/apprentice_data.py).
 
 Import [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#kneighborsclassifier) from scikit-learn and the labeled and unlabeled DataFrames to [withdrawal_risk.py](/withdrawal_risk.py).
 
@@ -66,7 +66,12 @@ Split the labeled data into a training set (80% of data) and test set (20% of da
 
 Print the test and training accuracy for each k value of neighbors and plot them using [matplotlib](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html).
 
+## Preprocessing and Cross-validation
+To improve the reliabilidy of this model, I implemented the [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) method to normalize distrubtion of the individual features. I then used [Grid Search Cross-Validation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) to determine the ideal k value to prevent overfitting and underfitting.
+
 ## Conclusion
-The optimal number of k-neighbors for this data set is 2, with a test accuracy of 83%. Applying the model with a k of 2 to the unlabeled data set produces a list of 83 (of 1000) apprentices who are at risk of withdrawal.
+Prior to scaling this data this model predicted apprentice withdrawals with a test accuracy of 83%.  Implementing a data pipeline with Preprocessing and Cross-validation improved the model's accuracy to 98.37%.
+
+Applying the model with a k of 13 to the unlabeled data set produces a list of 36 (of 1000) apprentices who are at risk of withdrawal.
 
 This model could be trained on an organic dataset to make ongoing automated predictions of apprentice withdrawal risk, allowing apprenticeship providers to make targeted intervention to improve their completion rates.
